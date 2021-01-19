@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Princess+Sofia&display=swap');
+
+
+
+.form {
+    
+    width: 100%;
+}
+
+.logo-login {
+    color: rgba(0, 0, 0, .7);
+    font-family: 'Princess Sofia';
+    font-size: 42px;
+    text-align: center;
+    cursor: pointer;
+    
+    
+}
+.helper{
+    color: rgba(0, 0, 0, .7);
+    font-family: 'Roboto';
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+}
+

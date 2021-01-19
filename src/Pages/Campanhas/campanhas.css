@@ -1,0 +1,11 @@
+.div-main-campanhas{
+    background-color: #F2F5F7;
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.div-campanhas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

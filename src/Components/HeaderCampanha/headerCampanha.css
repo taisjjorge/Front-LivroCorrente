@@ -1,0 +1,18 @@
+.titulo-bg-campanha {
+    height: auto;
+    background-color:#27b2c7 ;
+    opacity: .8;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.titulo-bg-campanha h1{
+    color:white;
+    text-align: right;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    margin-right: 50px;
+    font-family: 'Amatic SC', cursive;
+    font-size: 52px;
+    
+}

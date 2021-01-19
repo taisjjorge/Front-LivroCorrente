@@ -1,0 +1,90 @@
+
+.div-main-quemSomos {
+    background-color: #F2F5F7;
+}
+
+.container-info{
+   
+    height: auto;
+    padding-top: 30px;
+    margin-bottom: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.img-leitura {
+    width: 50%;
+    text-align: center; 
+    height: 400px;
+}
+
+.inf-quemSomos-parent{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.inf-quemSomos {
+    margin-right: 30px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.inf-quemSomos h1 {
+    font-family: 'Amatic SC', cursive;
+    font-weight:bold;
+    color: rgb(41, 41, 41);
+    margin-bottom: 20px;
+    
+}
+
+.equipe{
+    height: 500px;
+    background-color: #27b2c7;
+}
+
+.depoimentos {
+    display: flex;
+    justify-content: center;
+}
+
+/* .linha{ */
+    /* border: 0.5px solid #2093bf; */
+    /* width: 60%;
+    align-self: center;
+    margin: 0px;
+} */
+
+.container-depoimento h1 {
+    font-family: 'Amatic SC', cursive;
+    font-weight:bold;
+    color: rgb(41, 41, 41);
+    text-align: center;
+    padding: 20px;
+}
+
+
+@media(max-width: 768px) {
+    .container-info{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .img-leitura {
+        width: 100%;
+    }
+
+    .inf-quemSomos {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        padding: 0px;
+    }
+    
+}
+ 

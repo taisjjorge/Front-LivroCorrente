@@ -15,7 +15,7 @@ export default function Biblioteca (props){
       
           <Col md={4}>
             <Card className="card">
-              <Card.Img variant="top" src={'https://rnbc.org.br/wp-content/uploads/2020/03/Casa-Azul-768x434.jpeg'} />
+              <Card.Img variant="top" src={require(`./img/${props.imagem}`).default} />
               <Card.Body>
                 <Card.Title>{props.nome}</Card.Title>
                 <Card.Text>Rede: {props.nome_rede}</Card.Text>

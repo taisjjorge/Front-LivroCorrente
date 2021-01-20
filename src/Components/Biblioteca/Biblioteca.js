@@ -27,6 +27,8 @@ export default function Biblioteca (props){
              </Card.Body>
             </Card>
           </Col>
+
+          
     );
 }
 

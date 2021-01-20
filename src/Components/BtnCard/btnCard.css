@@ -26,11 +26,17 @@
     
 }
 
-@media(max-width: 768px) {
-    .btn-card-parent{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-    }
+.btn-texto{
+    margin: 0px;
 }
- 
+
+@media(max-width: 768px) {
+
+.btn-card {
+    height: 100px;
+}
+
+.btn-texto{
+    margin: 0px;
+}
+}

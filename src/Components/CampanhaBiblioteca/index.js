@@ -1,10 +1,10 @@
 import React from 'react';
 import {  useState } from 'react';
 import { Modal, Button} from 'react-bootstrap';
-import './campanha.css';
+import './campanhaBiblioteca.css';
 
 
-export default function Campanha(props){
+export default function CampanhaBiblioteca(props){
 
 
   const [lgShow, setLgShow] = useState(false);
@@ -20,7 +20,7 @@ export default function Campanha(props){
               <p>Exemplares: {props.numeroExemplar}</p>
               <p>Gênero: {props.genero}</p>
               <p>{props.Biblioteca}</p>
-              <Button onClick={() => setLgShow(true)}>Doar</Button>
+              <Button variant="danger" className="remover">Remover</Button>
             </div>
 
             {/* React-Bootstrap */}

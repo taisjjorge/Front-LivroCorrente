@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import HeaderCampanha from '../../Components/HeaderCampanha';
 import './campanhas.css';
-import Campanha from '../../Components/Campanha';
+import CampanhaBiblioteca from '../../Components/CampanhaBiblioteca';
 
 
 export default function Campanhas () {
@@ -29,7 +29,7 @@ export default function Campanhas () {
         if (produtos.length==0){
             cards = <h1>Essa Biblioteca não realizou pedidos em nosso site :C </h1>
         } else {
-            cards = produtos.map((item) => <Campanha capa={item.capa_pedido}
+            cards = produtos.map((item) => <CampanhaBiblioteca capa={item.capa_pedido}
                 titulo={item.titulo_pedido}
                 numeroExemplar={item.numeroExemplar_pedido}
                 genero={item.genero_pedido}
@@ -44,7 +44,7 @@ export default function Campanhas () {
             setProdutos(data);
     
         }, [])
-        cards = produtos.map(item => <Campanha capa={item.capa_pedido}
+        cards = produtos.map(item => <CampanhaBiblioteca capa={item.capa_pedido}
             titulo={item.titulo_pedido}
            numeroExemplar={item.numeroExemplar_pedido}
            genero={item.genero_pedido}

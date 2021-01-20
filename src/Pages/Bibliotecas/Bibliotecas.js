@@ -26,6 +26,7 @@ export default function Bibliotecas() {
                                                          cidade_biblioteca={item.cidade_biblioteca}
                                                          link={item.linkRNBC_biblioteca}
                                                          Campanha="/Campanhas"
+                                                         imagem={item.imagem_biblioteca}
                                                           />)
 
     return (

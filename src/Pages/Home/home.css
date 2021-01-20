@@ -32,3 +32,13 @@
    
     scroll-behavior: smooth;
 }
+
+@media(max-width: 768px) {
+
+.cards {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    }
+}
+    

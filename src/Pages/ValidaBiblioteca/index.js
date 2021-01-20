@@ -1,3 +1,4 @@
+import React from 'react'
 import FormularioCadastro  from '../../Components/Forms/CadastroBiblioteca/FormularioCadastro'
 import  Login  from '../../Components/Forms/Login'
 import { Container } from '@material-ui/core';
@@ -28,7 +29,13 @@ export default function ValidaBiblioteca() {
     )
 }
 
-export function aoEnviarForm(dados){
-    console.log(dados);
-}   //printa no console os dados do FormCad
+export async function aoEnviarForm(dados){
+    const answer = await fetch("http://localhost:3001/cadastro/funcionario",{
+        method: "POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({dados})})
+
+    const data = await answer.json()
+    console.log(await data)
+} 
   

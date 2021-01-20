@@ -10,6 +10,7 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
         const [celular, setCelular] = useState("");
         const [rede, setRede] = useState(Number);
         const [biblio, setBiblio] = useState(Number);
+        const [vinculo, setVinculo] = useState("");
 
         const [erros, setErros] = useState({cpf:{valido:true, texto:""}, nome:{valido:true, texto:""}, celular:{valido:true, texto:""}})
 
@@ -48,9 +49,8 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
             Func1(id)
         }
     }
-    console.log(bibliotecas)
+
     const options = bibliotecas.map(item => <option value={item.id_biblioteca}>{item.nome_biblioteca}</option>)
-    console.log(options)
 
     return(
         <>
@@ -59,8 +59,8 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
             onSubmit={(event) => {
                 event.preventDefault();
                 if(possoEnviar()){
-                    aoEnviar({ nome, cpf, email, celular, rede, biblio });
-                }     
+                    aoEnviar({ nome, cpf, email, celular, rede, biblio, vinculo });
+                }
             }}>
 
             <Typography variant="h7">Apoiamos todas as bibliotecas comunitárias que estão localizadas no Rio de Janeiro
@@ -144,7 +144,7 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
                         checked={rede}
                         value={rede}
                         onChange={(event) => {
-                          setRede(event.target.checked);
+                          setRede(event.target.value);
                           PegaBiblioteca(event)
                         }}
                     >
@@ -161,10 +161,10 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
                         checked={biblio}
                         value={biblio}
                         onChange={(event) => {
-                        setBiblio(event.target.checked);
+                        setBiblio(event.target.value);
                         }}
                     >
-                        <optgroup label="Bibliotecas">
+                        <optgroup label="Bibliotecas: ">
                             {options}
                         </optgroup>
                         
@@ -174,7 +174,11 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
                 <Typography id="select">
                     Vínculo com a Biblioteca
                 </Typography>
-                    <TextField 
+                    <TextField
+                        value={vinculo}
+                        onChange={(event) => {
+                            setVinculo(event.target.value);
+                            }}
                         id="vinculo"
                         name="vinculo"
                         label="Ex: assistente, bibliotecário, etc"

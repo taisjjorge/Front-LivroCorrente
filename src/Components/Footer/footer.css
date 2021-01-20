@@ -75,6 +75,7 @@
     text-align: center;
     background-color:#987284;
     margin-bottom: -15px;
+    line-height: 2;
 }
 
 @media(max-width: 768px) {

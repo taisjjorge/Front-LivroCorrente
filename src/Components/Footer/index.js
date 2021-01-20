@@ -32,8 +32,8 @@ export default function Footer (){
             </div>
 
             <p className="copyright">
-                © Copyright 2021 Livro Corrente, Inc. Todos os direitos reservados. 
-                As diversas marcas comerciais pertencem a seus respectivos proprietários
+                © Copyright 2021 Livro Corrente, Inc. Todos os direitos reservados.
+                As diversas marcas comerciais e redes de bibliotecas aqui apresentadas pertencem a seus respectivos proprietários
             </p>
             
         </div>

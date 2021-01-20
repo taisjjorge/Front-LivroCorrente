@@ -15,7 +15,7 @@ export default function Biblioteca (props){
       
           <Col md={4}>
             <Card className="card">
-              <Card.Img variant="top" src={require(`./img/img-bib.png`).default} />
+              <Card.Img variant="top" src={'https://rnbc.org.br/wp-content/uploads/2020/03/Casa-Azul-768x434.jpeg'} />
               <Card.Body>
                 <Card.Title>{props.nome_biblioteca}</Card.Title>
                 <Card.Text>Rede: {props.nome_rede}</Card.Text>
@@ -27,6 +27,8 @@ export default function Biblioteca (props){
              </Card.Body>
             </Card>
           </Col>
+
+          
     );
 }
 

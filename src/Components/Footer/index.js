@@ -7,28 +7,31 @@ export default function Footer (){
 
                 <h6 className="logo">LivroCorrente</h6>
                 
-                <div className="info-inicio">
-                    <h6 className="title">Início</h6> {/*Uppercase via css*/}
-                    <a className="item-footer" href="#">Quem Somos</a>
-                    <a className="item-footer" href="#">Pontos de Coleta</a>
-                    <a className="item-footer" href="#">Bibliotecas</a>
-                </div>
-
-                <div className="suporte">
-                    <h6 className="title">Suporte</h6>
-                    <a className="item-footer" href="#">Voluntários</a>
-                    <a className="item-footer" href="#">Parceiros</a>
-                    <a className="item-footer" href="#">FAQ</a>
-                </div>
-
-                <div className="socialmedia">
-                    <h6 className="title">Nossas Redes Sociais</h6>
-                    <div className="redes-sociais">
-                        <a className="icone-contato" href="http://instagram.com"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
-                        <a className="icone-contato" href="http://facebook.com"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
-                        <a className="icone-contato" href="http://linkdin.com"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+                <div className="container-info">
+                    <div className="info-inicio">
+                        <h6 className="title">Início</h6> {/*Uppercase via css*/}
+                        <a className="item-footer" href="#">Quem Somos</a>
+                        <a className="item-footer" href="#">Pontos de Coleta</a>
+                        <a className="item-footer" href="#">Bibliotecas</a>
                     </div>
-                </div> 
+
+                    <div className="suporte">
+                        <h6 className="title">Suporte</h6>
+                        <a className="item-footer" href="#">Voluntários</a>
+                        <a className="item-footer" href="#">Parceiros</a>
+                        <a className="item-footer" href="#">FAQ</a>
+                    </div>
+                
+
+                    <div className="socialmedia">
+                        <h6 className="title">Nossas Redes Sociais</h6>
+                        <div className="redes-sociais">
+                            <a className="icone-contato" href="http://instagram.com"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+                            <a className="icone-contato" href="http://facebook.com"><i class="fa fa-facebook-square fa-2x" aria-hidden="true"></i></a>
+                            <a className="icone-contato" href="http://linkdin.com"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+                        </div>
+                    </div> 
+                </div>
             </div>
 
             <p className="copyright">

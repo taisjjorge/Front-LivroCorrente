@@ -1,6 +1,8 @@
 import React from 'react';
 import {  useState } from 'react';
 import { Modal, Button} from 'react-bootstrap';
+import { NativeSelect, TextField } from '@material-ui/core';
+
 import './campanha.css';
 
 
@@ -39,13 +41,39 @@ export default function Campanha(props){
                 <h4>Dá uma olhada nas formas de doação:</h4>
                 <br/>
                 <ul>
-                  <li><h5>Contato direto com a biblioteca:</h5></li>
-                  <p>É possível encontrar o link "Perfil" com todas as informações de contato na página <a href="../../Bibliotecas">Bibliotecas</a></p>
+                  <li><h5>Envio direto:</h5></li>
+                  <p>É possível o envio direto para a biblioteca pelos Correios. <br/>
+                   Basta acessar a página <a href="../../Bibliotecas">Bibliotecas</a> e conferir as informações cadastrais de endereço no perfil da biblioteca correspondente</p>
                   <br/>
-                  <li><h5>Pontos de coleta:</h5></li>
-                  <br/>
-                  <li><h5>Comprar o livro em sites parceiros:</h5></li>
-                  <br/>
+                  <li><h5>Encontre um voluntário:</h5></li>
+                  <p>Selecione o bairro mais próximo para deixar sua doação com um de nossos voluntários</p>
+                  <NativeSelect id="select">
+                        <option value="coleta"></option>
+                        <option value="coleta">Madureira</option>
+                        <option value="coleta">Bonsucesso</option>
+                        <option value="coleta">Centro</option>
+                        <option value="coleta">Pça XV</option>
+                        <option value="coleta">Glória</option>
+                        <option value="coleta">Lgo do Machado</option>
+                        <option value="coleta">Botafogo</option>
+                        <option value="coleta">Jacarepaguá</option>
+                        <option value="coleta">Ilha do Governador</option>
+                    </NativeSelect><br/><br/>
+                    
+                    <TextField 
+                            id="celular"
+                            name="celular"
+                            label="Celular"
+                            type="text"
+                            variant="standard"                
+                        /> <br/><br/>
+
+                    <Button variant="outline-primary" type="submit">Enviar</Button>
+                  <br/><br/>
+                  
+                  <li><h5>Comprar livro em sites parceiros:</h5></li>
+                  <p>Na compra de um livro selecionado com um de nossos parceiros, outro exemplar é enviado diretamente 
+                    para uma biblioteca. Confira a listagem de livros na página <a href="#">Parceiros</a> e ajude!</p> 
                 </ul>
               </Modal.Body>
             </Modal>

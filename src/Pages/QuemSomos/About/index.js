@@ -48,7 +48,12 @@ export default class Membros extends Component {
                        <Sobrenos>
                             <Inf>
                                 <h1>Sobre nós</h1>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
+                                <p>Somos um coletivo de desenvolvedores FullStack, concluintes do programa <a href="https://www.recodepro.org.br/">Recode PRO</a>.
+                                Nosso interesse é promover uma solução de alto impacto aos desafios decorrentes do baixo acesso à literatura nas comunidades. 
+                                Ler expande nossas referências e nos estimula a imaginar. 
+                                Se você também acredita que a leitura é indispensável na construção do saber dos indivíduos e, consequentemente,
+                                 é um direito fundamental, apoie o nosso projeto como voluntário ou parceiro e nos ajude a continuar.
+                                     </p>
                             </Inf>
                        </Sobrenos>
                        <Squad>

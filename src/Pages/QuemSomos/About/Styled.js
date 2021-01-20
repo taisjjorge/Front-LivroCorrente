@@ -19,7 +19,7 @@ export const Lista = styled.div`
     text-align: center; 
     height: 400px;
     img {
-        margin: 0 auto;
+        margin: 0 40px 0 auto;
         width:150px;
     }
     `
@@ -54,12 +54,10 @@ export const Lista = styled.div`
 
 `
 export const Info = styled.div`
+    
     font-style: italic;
-    line-height: 2;
+    line-height: 3;
     color: #fff;
-    margin-bottom: 20px;
-    margin: 0 auto;
-    align-items: center;
-    justify-content: center;
-
+    margin: 0 40px 0 auto;
+    
 `

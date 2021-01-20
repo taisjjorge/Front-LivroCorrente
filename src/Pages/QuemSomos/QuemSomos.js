@@ -3,6 +3,7 @@ import { Figure } from 'react-bootstrap';
 import HeaderPagina from '../../Components/HeaderPagina';
 import './quemSomos.css';
 import Depoimentos from '../../Components/Depoimento';
+import Membros from './About/index'
 
 export default function QuemSomos () {
 
@@ -36,6 +37,7 @@ export default function QuemSomos () {
                 </div>
                 {/* Depoimentos */}
                 <div className="container-depoimento" >
+                    <Membros />
                     <Depoimentos />
                 </div>
 

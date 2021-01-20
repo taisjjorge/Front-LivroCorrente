@@ -30,14 +30,17 @@ export default function QuemSomos () {
                             <p>Nossa missão é apoiar redes de bibliotecas comunitárias na garantia
                                 do livre acesso à leitura, bem como na promoção do
                                 senso crítico e potencial criativo de jovens e adultos leitores localizados em
-                                pequenas comunidades e com baixo acesso a cultura literária.  </p>
+                                pequenas comunidades e com baixo acesso a cultura literária. Acreditamos na importância dessa cultura
+                                para o desenvolvimento cognitivo e intelectual do ser humano e, portanto, encaramos a leitura como  
+                                um direito fundamental.  </p>
                         </div>
                         <div className="inf-quemSomos">
                             <h1>Valores</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-                                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+                            <p>Somos motivados pelos princípios de circularidade e empatia. Defendemos que todas as pessoas
+                                tem direito ao livro e a leitura. Nosso trabalho é para que o exercício desse direito chegue em pequenas
+                                comunidades, através da captação de doações de livros e envio às bibliotecas comunitárias. <br/>
+                                Ética é inegociável.  
+                                </p>
                         </div>
                     </div>
                 </div>

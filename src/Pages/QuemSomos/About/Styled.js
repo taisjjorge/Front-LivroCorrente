@@ -4,6 +4,8 @@ export const Section = styled.div`
     background:linear-gradient(to right, #0084D7, #0266A5);
     height: 600px;
     display: flex;
+    width:100%
+    }
 `
 export const Lista = styled.div`
     padding-top: 30px;
@@ -12,6 +14,7 @@ export const Lista = styled.div`
     flex-direction:row;
     flex-wrap: wrap;
     justify-content: space-around;
+    
     `
     
     export const Conteudo = styled.div`
@@ -32,7 +35,7 @@ export const Lista = styled.div`
     
     export const Inf = styled.div`
     margin-right: 30px;
-    padding: 40px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -40,11 +43,15 @@ export const Lista = styled.div`
         font-family: 'Amatic SC', cursive;
         font-weight:bold;
         color: rgb(41, 41, 41);
-        margin-bottom: 20px;
+        margin-bottom: -10px;
         color:#fff;
     }
     p {
         color:#fff;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
     }
     `
     

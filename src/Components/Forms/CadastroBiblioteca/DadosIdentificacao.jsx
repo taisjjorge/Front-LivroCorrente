@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import Options from "./OptionBibliotecas"
 import { Button, Typography, FormControl, NativeSelect, InputLabel, TextField } from '@material-ui/core';
 import '../Forms.css';
 
@@ -9,8 +9,8 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
         const [cpf, setCpf] = useState("");
         const [email, setEmail] = useState("");
         const [celular, setCelular] = useState("");
-        const [rede, setRede] = useState(true);
-        const [biblio, setBiblio] = useState(true);
+        const [rede, setRede] = useState(Number);
+        const [biblio, setBiblio] = useState(Number);
 
         const [erros, setErros] = useState({cpf:{valido:true, texto:""}, nome:{valido:true, texto:""}, celular:{valido:true, texto:""}})
 
@@ -31,6 +31,27 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
      }
         return true;
   }
+    const [bibliotecas, setBibliotecas] = useState([])
+
+    async function Func1(id){
+        const answer = await fetch("http://localhost:3001/formulario",{
+            method: "POST",
+            headers:{"Content-Type":"application/json"},
+            body: JSON.stringify({"id":id})})
+
+        const data = await answer.json()
+        setBibliotecas(data)
+        }
+
+    async function PegaBiblioteca(event){
+        if (event.target.value != ''){
+            const id=event.target.value
+            Func1(id)
+        }
+    }
+    console.log(bibliotecas)
+    const options = bibliotecas.map(item => <option value={item.id_biblioteca}>{item.nome_biblioteca}</option>)
+    console.log(options)
 
     return(
         <>
@@ -125,12 +146,13 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
                         value={rede}
                         onChange={(event) => {
                           setRede(event.target.checked);
+                          PegaBiblioteca(event)
                         }}
                     >
-                        <option value="rede"></option>
-                        <option value="rede">Mar de Leitores</option>
-                        <option value="rede">Rede Baixada Literária</option>
-                        <option value="rede">Tecendo Uma Rede de Leitura</option>
+                        <option value=""></option>
+                        <option value="1">Mar de Leitores</option>
+                        <option value="2">Rede Baixada Literária</option>
+                        <option value="3">Tecendo Uma Rede de Leitura</option>
                     </NativeSelect><br></br>
 
                 <Typography id="select">
@@ -143,12 +165,10 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
                         setBiblio(event.target.checked);
                         }}
                     >
-                        <option value="biblio"></option>
-                        <option value="biblio">Casa Azul</option>
-                        <option value="biblio">Ciranda da Tarituba</option>
-                        <option value="biblio">Colibri</option>
-                        <option value="biblio">Itaxí Mirim</option>
-                        <option value="biblio">Quilombo Campinho da Independência</option>
+                        <optgroup label="Bibliotecas">
+                            {options}
+                        </optgroup>
+                        
                     </NativeSelect>
                         <br/>
 

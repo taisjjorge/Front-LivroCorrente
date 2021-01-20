@@ -22,7 +22,7 @@ function BaseMenu(props) {
                     <Nav.Link className="nav-link" as={Link} to="/Bibliotecas/Bibliotecas" href="/Bibliotecas/Bibliotecas">Bibliotecas</Nav.Link>
                     
                     <Nav.Link className="nav-link" as={Link} to="/QuemSomos" href="/QuemSomos">Quem somos</Nav.Link>
-                    <Nav.Link className="nav-link" as={Link} to="/Contato" href="/Contato">Pontos de Coleta</Nav.Link>
+                    <Nav.Link  className="nav-link disabled" as={Link} to="/Contato" href="/Contato">Pontos de Coleta</Nav.Link>
                     
                 </Nav>  
                 <Nav>

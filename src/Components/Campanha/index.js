@@ -1,6 +1,6 @@
 import React from 'react';
-import {  useState, useEffect } from 'react';
-import { Modal, Container, Button} from 'react-bootstrap';
+import {  useState } from 'react';
+import { Modal, Button} from 'react-bootstrap';
 import './campanha.css';
 
 

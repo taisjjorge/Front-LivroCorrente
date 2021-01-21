@@ -13,7 +13,7 @@ export default function Bibliotecas() {
   const [biblioteca, setBiblioteca] = useState([]);
 
   React.useState(async () => {
-      const answer = await fetch("http://localhost:3001/bibliotecas")
+      const answer = await fetch("https://livrocorrente.herokuapp.com/bibliotecas")
       const data = await answer.json()
       setBiblioteca(data);
 

@@ -12,7 +12,7 @@ export default function CampanhaBiblioteca(props){
 
   async function Update(){
     const titulo=props.titulo
-    const answer = await fetch("http://localhost:3001/remover/card",{
+    const answer = await fetch("https://livrocorrente.herokuapp.com/remover/card",{
         method: "POST",
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify({"titulo":titulo})})

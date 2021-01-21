@@ -40,6 +40,7 @@ export const Lista = styled.div`
     flex-direction: column;
     text-align: center;
     h1 {
+        line-height: 3;
         font-family: 'Amatic SC', cursive;
         font-weight:bold;
         color: rgb(41, 41, 41);

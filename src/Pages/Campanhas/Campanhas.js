@@ -16,7 +16,7 @@ export default function Campanhas () {
 
     function Func1(){
         useState( async () => {
-        const answer = await fetch("http://localhost:3001/inativos",{
+        const answer = await fetch("https://livrocorrente.herokuapp.com/inativos",{
             method: "POST",
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify({"id":id})})

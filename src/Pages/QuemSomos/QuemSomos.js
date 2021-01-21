@@ -13,7 +13,7 @@ export default function QuemSomos () {
             <HeaderPagina titleCategoria='Quem somos'/>
             <div className='div-main-quemSomos'>
             
-                <div className="container-info">
+                <div className="container-quemSomos">
                     {/* Imagem */}
                     <div className="img-leitura">
                         <Figure>

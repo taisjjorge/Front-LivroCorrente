@@ -36,8 +36,10 @@
     font-family: 'Roboto';
     padding: 0px;
     width: 60%;
+    display: flex;
     justify-content: space-around;
     align-items: flex-start;
+    padding-bottom: 20px;
 }
 
 .info-inicio {
@@ -107,6 +109,8 @@
    width: 100%;
    text-align: center;
    align-items: center;
+   display: flex;
+   flex-direction: column;
 }
 
 .info-inicio {

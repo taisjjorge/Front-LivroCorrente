@@ -1,16 +1,18 @@
 
 .div-main-quemSomos {
     background-color: #F2F5F7;
+    
 }
 
-.container-info{
+.container-quemSomos{
    
     height: auto;
     padding-top: 30px;
-    margin-bottom: 200px;
+    width: 100%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    padding-bottom: 20px;
 }
 
 .img-leitura {
@@ -46,10 +48,7 @@
     background-color: #27b2c7;
 }
 
-.depoimentos {
-    display: flex;
-    justify-content: center;
-}
+
 
 /* .linha{ */
     /* border: 0.5px solid #2093bf; */
@@ -58,17 +57,11 @@
     margin: 0px;
 } */
 
-.container-depoimento h1 {
-    font-family: 'Amatic SC', cursive;
-    font-weight:bold;
-    color: rgb(41, 41, 41);
-    text-align: center;
-    padding: 20px;
-}
+
 
 
 @media(max-width: 768px) {
-    .container-info{
+    .container-quemSomos{
         display: flex;
         flex-direction: column;
         width: 100%;

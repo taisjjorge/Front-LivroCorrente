@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 import {  useState } from 'react';
 import { Modal, Button} from 'react-bootstrap';
 import './campanhaBiblioteca.css';
@@ -8,6 +9,20 @@ export default function CampanhaBiblioteca(props){
 
 
   const [lgShow, setLgShow] = useState(false);
+
+  async function Update(){
+    const titulo=props.titulo
+    const answer = await fetch("http://localhost:3001/remover/card",{
+        method: "POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({"titulo":titulo})})
+
+    const data = await answer.json()
+    console.log(data)
+    if (data.resp == "Foi"){
+      window.location.reload()
+    }
+  }
 
     return(
   
@@ -20,7 +35,7 @@ export default function CampanhaBiblioteca(props){
               <p>Exemplares: {props.numeroExemplar}</p>
               <p>Gênero: {props.genero}</p>
               <p>{props.Biblioteca}</p>
-              <Button variant="danger" className="remover">Remover</Button>
+              <Button onClick={Update} variant="danger" className="remover">Remover</Button>
             </div>
 
             {/* React-Bootstrap */}

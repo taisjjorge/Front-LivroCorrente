@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import FormularioCadastro  from '../../Components/Forms/CadastroBiblioteca/FormularioCadastro'
 import  Login  from '../../Components/Forms/Login'
 import { Container } from '@material-ui/core';
@@ -36,6 +37,8 @@ export async function aoEnviarForm(dados){
         body: JSON.stringify({dados})})
 
     const data = await answer.json()
-    console.log(await data)
+    if (data.resp == "Foi"){
+        window.location.reload()
+    }
 } 
   

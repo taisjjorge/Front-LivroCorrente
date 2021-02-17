@@ -1,4 +1,7 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { Provider } from 'react-redux'
+
+import Store from './Store/Store'
 
 import Home from './Pages/Home/Home';
 import Bibliotecas from './Pages/Bibliotecas/Bibliotecas';
@@ -8,17 +11,26 @@ import ValidaVoluntario from './Pages/ValidaVoluntario'
 import ValidaBiblioteca from './Pages/ValidaBiblioteca'
 import MapView from './Pages/PontosDeColeta/index'
 
+
+import Autentica from './Autentica'
+
+
+
 function Routes() {
     return (
-        <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/Bibliotecas" component={Bibliotecas} />
-            <Route path="/QuemSomos" component={QuemSomos} />
-            <Route path="/Campanhas" component={Campanhas} />
-            <Route path="/Login-Voluntario" component={ValidaVoluntario} />
-            <Route path="/Login-Biblioteca" component={ValidaBiblioteca} />
-            <Route path="/PontosColeta" component={MapView} />
-        </Switch>
+        <Provider store={Store}>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route path="/Bibliotecas" component={Bibliotecas} />
+                <Route path="/QuemSomos" component={QuemSomos} />
+                <Route path="/Campanhas" component={Campanhas} />
+                <Route path="/Login-Voluntario" component={ValidaVoluntario} />
+                <Route path="/Login-Biblioteca" component={ValidaBiblioteca} />
+                <Route path="/PontosColeta" component={MapView} />
+                {/* Teste, não atrapalha nada se não tentar ir pra esse path aí */}
+                <Autentica path="/Aleatorio" component={<h1>Valido</h1>} /> 
+            </Switch>
+        </Provider>
     );
 }
 

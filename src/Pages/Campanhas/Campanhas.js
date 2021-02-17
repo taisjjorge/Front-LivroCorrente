@@ -4,63 +4,59 @@ import { Container } from 'react-bootstrap';
 import HeaderCampanha from '../../Components/HeaderCampanha';
 import './campanhas.css';
 import CampanhaBiblioteca from '../../Components/CampanhaBiblioteca';
+import { useSelector } from 'react-redux'
 
 
 export default function Campanhas () {
 
+    const NumB = localStorage.getItem("Biblio")
 
-    const [produtos, setProdutos] = useState([]);
-    let cards = []
-    let url = window.location.href
-    let id = url.split("=")[1]
+    const [biblioteca, setBiblioteca] = useState([])
+    const [livros, setLivros] = useState([]);
 
-    function Func1(){
-        useState( async () => {
-        const answer = await fetch("https://livrocorrente.herokuapp.com/inativos",{
+    useState( async () => {
+        const envio = await fetch("http://localhost:3001/biblioteca",{
             method: "POST",
             headers:{"Content-Type":"application/json"},
-            body: JSON.stringify({"id":id})})
-
-        const data = await answer.json()
-        setProdutos(data)
-
-        },[])
-        console.log(produtos.length)
-        if (produtos.length==0){
-            cards = <h1>Essa Biblioteca não realizou pedidos em nosso site :C </h1>
-        } else {
-            cards = produtos.map((item) => <CampanhaBiblioteca capa={item.capa_pedido}
-                titulo={item.titulo_pedido}
-                numeroExemplar={item.numeroExemplar_pedido}
-                genero={item.genero_pedido}
-                Biblioteca={item.nome_biblioteca} />)
-        }
-    }
-
-    function Func2() {
-        useState(async () => {
-            const answer = await fetch("http://localhost:3001/cards")
-            const data = await answer.json()
-            setProdutos(data);
+            body: JSON.stringify({"id":NumB})
+        })
     
-        }, [])
-        cards = produtos.map(item => <CampanhaBiblioteca capa={item.capa_pedido}
-            titulo={item.titulo_pedido}
-           numeroExemplar={item.numeroExemplar_pedido}
-           genero={item.genero_pedido}
-           Biblioteca={item.nome_biblioteca} />)
+        const espera = await envio.json()
+        setBiblioteca(espera[0].nome_biblioteca)
+    
+    },[])
+
+
+    useState( async () => {
+    const answer = await fetch("http://localhost:3001/inativos",{
+        method: "POST",
+        headers:{"Content-Type":"application/json"},
+        body: JSON.stringify({"id":NumB})
+    })
+
+    const data = await answer.json()
+    setLivros(data)
+
+    },[])
+
+    if (livros.length==0){
+        cards = <h1>Essa Biblioteca não realizou pedidos em nosso site :C </h1>
+    } else {
+    var cards = livros.map((item) => 
+    <CampanhaBiblioteca 
+        capa={item.capa_pedido}
+        titulo={item.titulo_pedido}
+        numeroExemplar={item.numeroExemplar_pedido}
+        genero={item.genero_pedido}
+        Biblioteca={item.nome_biblioteca} 
+        />)
     }
 
-    if (id != null || id != undefined){ 
-        Func1()
-    } else {
-        Func2()
-    }   
    
     return (
         
         <div className="div-main-campanhas">
-            <HeaderCampanha nomeBiblioteca="Biblioteca X"/>
+            <HeaderCampanha nomeBiblioteca={biblioteca}/>
 
             <h1 className="titulo-principal">Confira todas as campanhas abertas por esta biblioteca:</h1>
             <h3 className="titulo-secundario">Contribua com uma biblioteca comunitária!</h3>

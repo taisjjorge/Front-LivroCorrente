@@ -1,7 +1,7 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
-import {  useState } from 'react';
-import { Modal, Button} from 'react-bootstrap';
+import React, { Navigate } from 'react';
+import { NavLink } from 'react-router-dom'
+import { useState } from 'react';
+import { Modal, Button } from 'react-bootstrap';
 import './campanhaBiblioteca.css';
 
 
@@ -12,15 +12,26 @@ export default function CampanhaBiblioteca(props){
 
   async function Update(){
     const titulo=props.titulo
-    const answer = await fetch("https://livrocorrente.herokuapp.com/remover/card",{
+    const answer = await fetch("http://localhost:3001/remover/card",{
         method: "POST",
-        headers:{"Content-Type":"application/json"},
+        headers:{
+          "Content-Type": "application/json",
+          Authorization: "Bearer " + window.localStorage.getItem("token"),
+        },
         body: JSON.stringify({"titulo":titulo})})
 
     const data = await answer.json()
-    console.log(data)
-    if (data.resp == "Foi"){
-      window.location.reload()
+    console.log(data.Mensagem == "Token Invalido")
+    if (1<2){
+      <NavLink to="/Login-Biblioteca" />
+    }
+    if (data.Mensagem == "Token Invalido") {
+      <Navigate to="/Login-Biblioteca" />
+
+    // } else if (data.Mensagem == "Foi") {
+    //   <Navigate to="/Campanhas" />
+
+    // }
     }
   }
 

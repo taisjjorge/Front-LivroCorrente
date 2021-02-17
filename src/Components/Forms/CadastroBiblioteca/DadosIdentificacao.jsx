@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Typography, FormControl, NativeSelect, InputLabel, TextField } from '@material-ui/core';
+import { Button, Typography, FormControl, NativeSelect, TextField } from '@material-ui/core';
 import '../Forms.css';
 
 
@@ -165,6 +165,7 @@ export default function DadosIdentificacao({aoEnviar, validacoes}) {
                         }}
                     >
                         <optgroup label="Bibliotecas: ">
+                            <option value='1' />
                             {options}
                         </optgroup>
                         

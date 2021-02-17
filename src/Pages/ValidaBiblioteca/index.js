@@ -31,14 +31,18 @@ export default function ValidaBiblioteca() {
 }
 
 export async function aoEnviarForm(dados){
-    const answer = await fetch("https://livrocorrente.herokuapp.com/cadastro/funcionario",{
+    const answer = await fetch("http://localhost:3001/cadastro/funcionario",{
         method: "POST",
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify({dados})})
 
     const data = await answer.json()
-    if (data.resp == "Foi"){
-        window.location.reload()
+    if (data.Mensagem == "Seu cadastro está em analise"){
+        alert("Obtigado pelo cadastro, ele esta em analise agora")
+    } else if (data.Mensagem == "Email já cadastrado") {
+        alert("Email já cadastrado")
+    } else {
+        alert("Erro no cadastro")
     }
 } 
   

@@ -8,7 +8,7 @@ function BaseMenu(props) {
     const { location }  = props
     return (
 
-   
+        <header>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
             <Navbar.Brand  as={Link} to="/" href="/Home">
                 <img
@@ -33,6 +33,7 @@ function BaseMenu(props) {
                 </Nav>      
             </Navbar.Collapse>
         </Navbar>
+        </header>
 
     );
 };

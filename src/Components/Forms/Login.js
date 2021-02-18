@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Button, TextField, FormControl, Typography} from '@material-ui/core';
+import { Redirect } from "react-router-dom";
 
 
 
@@ -26,12 +27,12 @@ export default function Login() {
         } else if (data.Mensagem == "Senha incorreta") {
             alert("Senha incorreta")
         } else if (data.Mensagem == "Em Analise") {
-            alert("Sua conta estáEm Analise")
+            alert("Seu cadastro está em analise")
         } else if (data.Mensagem == "Recusado") {
             alert("Recusado")
         } else if (data.Mensagem == "Aceito") {
-            alert("Bem Vindo!")
             localStorage.setItem("token", data.token)
+            return(<Redirect to='/' />)
         } else {
             alert("Erro no cadastro")
         }

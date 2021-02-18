@@ -1,14 +1,9 @@
 import React, { useState } from 'react'
 import L from 'leaflet'
-import { MapContainer, TileLayer, Marker, Popup, Tooltip } from 'react-leaflet'
+import { MapContainer, TileLayer} from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
-import Casa from '../../Components/Biblioteca/img/Ciranda de Tarituba.png'
 import Icone from './img/LivroC.png'
 import Ponto from '../../Components/Pontos/index'
-//import 'leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility.webpack.css'; 
-
-
-
 
 
 const Imagem = new L.icon({
@@ -44,10 +39,6 @@ const MapView = ()=> {
   telefone={item.telefone_biblioteca}
 
   /> )
-
-
-
-
     
    return(
 

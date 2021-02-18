@@ -1,7 +1,4 @@
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { Provider } from 'react-redux'
-
-import Store from './Store/Store'
 
 import Home from './Pages/Home/Home';
 import Bibliotecas from './Pages/Bibliotecas/Bibliotecas';
@@ -11,14 +8,21 @@ import ValidaVoluntario from './Pages/ValidaVoluntario'
 import ValidaBiblioteca from './Pages/ValidaBiblioteca'
 import MapView from './Pages/PontosDeColeta/index'
 
+import PrivateRoute from './Autentica'
 
-import Autentica from './Autentica'
-
+function Valido() {
+    return(
+        <h1>Valido</h1>
+    )
+}
 
 
 function Routes() {
+
+
+
     return (
-        <Provider store={Store}>
+        <main>
             <Switch>
                 <Route exact path="/" component={Home} />
                 <Route path="/Bibliotecas" component={Bibliotecas} />
@@ -28,9 +32,9 @@ function Routes() {
                 <Route path="/Login-Biblioteca" component={ValidaBiblioteca} />
                 <Route path="/PontosColeta" component={MapView} />
                 {/* Teste, não atrapalha nada se não tentar ir pra esse path aí */}
-                <Autentica path="/Aleatorio" component={<h1>Valido</h1>} /> 
+                <PrivateRoute path="/Aleatorio" component={Valido} /> 
             </Switch>
-        </Provider>
+        </main>
     );
 }
 

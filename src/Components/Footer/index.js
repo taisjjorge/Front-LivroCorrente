@@ -2,6 +2,7 @@ import './footer.css';
 
 export default function Footer (){
     return (
+        <footer>
         <div className="main-footer">
             <div className="container-footer">
 
@@ -40,5 +41,6 @@ export default function Footer (){
             </p>
             
         </div>
+        </footer>
     );
 }

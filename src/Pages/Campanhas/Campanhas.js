@@ -44,6 +44,7 @@ export default function Campanhas () {
     } else {
     var cards = livros.map((item) => 
     <CampanhaBiblioteca 
+        id={item.id_pedido}
         capa={item.capa_pedido}
         titulo={item.titulo_pedido}
         numeroExemplar={item.numeroExemplar_pedido}

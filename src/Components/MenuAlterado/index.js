@@ -27,6 +27,7 @@ function BaseMenuAlterado(props) {
                 </Nav>  
                 <Nav>
                     <Nav.Link  className="nav-link" as={Link} to="/Livros" href="/Livros">Livros</Nav.Link>
+                    <Nav.Link  className="nav-link" as={Link} to="/Funcionarios" href="/Funcionarios">Funcionarios</Nav.Link>
                 </Nav>      
             </Navbar.Collapse>
         </Navbar>

@@ -2,7 +2,8 @@ import React, {useState} from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import CampanhaBiblioteca from '../../Components/CampanhaBiblioteca'
 import CampanhaInativa from '../../Components/CampanhaInativa'
-
+import HeaderPagina from '../../Components/HeaderPagina'
+import { Container, Row, Button } from 'react-bootstrap'
 
 function Livros() {
 
@@ -58,16 +59,24 @@ function Livros() {
 
 
     return(
-        <div class="container">
-            <h1 class="display-4">Livros</h1>
-            <Link to="/AddLivros"><button>Adicionar Livro</button></Link>
+        <>
+        <HeaderPagina titleCategoria='Livros' />
+        <Container>
+            <div>
+                <Link to="/AddLivros"><Button class="btn btn-secondary mt-2">Adicionar Livros</Button></Link>
+                </div>
             <hr />
             <h1 class="display-4">Campanhas Ativas</h1>
-            {cardsAtivos}
+            <Row>
+                {cardsAtivos}
+            </Row>
             <hr />
             <h1 class="display-4">Livros Adicionados</h1>
-            {cardsInativos}
-        </div>
+            <Row>
+                {cardsInativos}
+            </Row>
+        </Container>
+        </>
     )
 }
 export default Livros

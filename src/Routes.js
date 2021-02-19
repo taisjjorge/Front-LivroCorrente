@@ -13,7 +13,7 @@ import ValidaBiblioteca from './Pages/ValidaBiblioteca'
 import MapView from './Pages/PontosDeColeta/index'
 import Livros from './Pages/Livros/Livros'
 import AddLivros from './Pages/AdicionarLivro/index'
-
+import Funcionarios from './Pages/Funcionarios/Funcionarios'
 
  
 import PrivateRoute from './Autentica'
@@ -40,6 +40,7 @@ function Routes() {
                     {/* Teste, não atrapalha nada se não tentar ir pra esse path aí */}
                     <PrivateRoute path="/Livros" component={Livros} /> 
                     <PrivateRoute path="/AddLivros" component={AddLivros} />
+                    <PrivateRoute path="/Funcionarios" component={Funcionarios} />
                 </Switch>
             </main>
         </>

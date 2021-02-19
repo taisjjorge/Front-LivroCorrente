@@ -16,7 +16,7 @@ export default function CampanhaInativa(props){
 
   async function Edicao(e){
     e.preventDefault()
-    const answer = await fetch("http://localhost:3001/atualizar/card",{
+    const answer = await fetch("https://back-livro-corrente.herokuapp.com/atualizar/card",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
@@ -34,7 +34,7 @@ export default function CampanhaInativa(props){
   }
 
   async function Update(){
-    const answer = await fetch("http://localhost:3001/remover/card",{
+    const answer = await fetch("https://back-livro-corrente.herokuapp.com/remover/card",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
@@ -47,7 +47,7 @@ export default function CampanhaInativa(props){
   }
 
   async function Delete(){
-    const answer = await fetch("http://localhost:3001/deletar",{
+    const answer = await fetch("https://back-livro-corrente.herokuapp.com/deletar",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",

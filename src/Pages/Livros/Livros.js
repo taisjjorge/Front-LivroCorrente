@@ -12,7 +12,7 @@ function Livros() {
     const [livros, setLivros] = useState([])
 
     useState( async () => {
-        const answer = await fetch("http://localhost:3001/livros",{
+        const answer = await fetch("https://back-livro-corrente.herokuapp.com/livros",{
             method: "POST",
             headers:{"Content-Type":"application/json",
             "Authorization": "Bearer "+ localStorage.getItem("token")

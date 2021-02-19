@@ -13,7 +13,7 @@ export default function Login() {
     async function ValidandoLogin(event){
         event.preventDefault()
 
-        const answer = await fetch("http://localhost:3001/login/funcionario",{
+        const answer = await fetch("https://back-livro-corrente.herokuapp.com/login/funcionario",{
             method: "POST",
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify({"dados":{

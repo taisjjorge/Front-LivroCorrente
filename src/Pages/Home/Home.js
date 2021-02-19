@@ -14,7 +14,7 @@ function Home() {
     const [produtos, setProdutos] = useState([]);
 
     useState(async () => {
-        const answer = await fetch("http://localhost:3001/cards")
+        const answer = await fetch("https://back-livro-corrente.herokuapp.com/cards")
         const data = await answer.json()
         setProdutos(data);
 

@@ -15,7 +15,7 @@ export default function Campanhas () {
     const [livros, setLivros] = useState([]);
 
     useState( async () => {
-        const envio = await fetch("http://localhost:3001/biblioteca",{
+        const envio = await fetch("https://back-livro-corrente.herokuapp.com/biblioteca",{
             method: "POST",
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify({"id":NumB})
@@ -28,7 +28,7 @@ export default function Campanhas () {
 
 
     useState( async () => {
-    const answer = await fetch("http://localhost:3001/inativos",{
+    const answer = await fetch("https://back-livro-corrente.herokuapp.com/inativos",{
         method: "POST",
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify({"id":NumB})

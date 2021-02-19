@@ -8,7 +8,7 @@ function FuncionariosAnalise(props) {
   const [resp, setResp] = useState()
 
   async function Update(estado){
-    const answer = await fetch("http://localhost:3001/alterar/funcionario",{
+    const answer = await fetch("https://back-livro-corrente.herokuapp.com/alterar/funcionario",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",

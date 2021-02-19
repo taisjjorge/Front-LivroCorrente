@@ -15,7 +15,7 @@ export default function AdicionaLivro() {
 
     async function Adicao(e){
         e.preventDefault()
-        const answer = await fetch("http://localhost:3001/adiciona/livros",{
+        const answer = await fetch("https://back-livro-corrente.herokuapp.com/adiciona/livros",{
             method: "POST",
             headers:{
               "Content-Type": "application/json",

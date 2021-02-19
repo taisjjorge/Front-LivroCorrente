@@ -37,7 +37,6 @@ function Routes() {
                     <Route path="/Login-Voluntario" component={ValidaVoluntario} />
                     <Route path="/Login-Biblioteca" component={ValidaBiblioteca} />
                     <Route path="/PontosColeta" component={MapView} />
-                    {/* Teste, não atrapalha nada se não tentar ir pra esse path aí */}
                     <PrivateRoute path="/Livros" component={Livros} /> 
                     <PrivateRoute path="/AddLivros" component={AddLivros} />
                     <PrivateRoute path="/Funcionarios" component={Funcionarios} />

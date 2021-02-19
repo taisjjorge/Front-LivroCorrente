@@ -12,15 +12,7 @@ export default function BannerPrincipal() {
                     <p className="subtitulo-banner">Doe um livro e ajude uma biblioteca comunitária!</p>
                 </Carousel.Caption>
             </Carousel.Item>
-
-            {/* <Carousel.Item interval={3000} >
-                <img className="d-block w-100" src="#" alt="Second slide"/>
-                <Carousel.Caption>
-                    <h3>.</h3>
-                    <p>.</p>
-                </Carousel.Caption>
-            </Carousel.Item> */}
-        </Carousel >
+        </Carousel>
 
     );
 };

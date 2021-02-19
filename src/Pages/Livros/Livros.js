@@ -5,6 +5,8 @@ import CampanhaInativa from '../../Components/CampanhaInativa'
 import HeaderPagina from '../../Components/HeaderPagina'
 import { Container, Row, Button } from 'react-bootstrap'
 
+import './livros.css';
+
 function Livros() {
 
     const [livros, setLivros] = useState([])
@@ -61,21 +63,25 @@ function Livros() {
     return(
         <>
         <HeaderPagina titleCategoria='Livros' />
-        <Container>
-            <div>
-                <Link to="/AddLivros"><Button class="btn btn-secondary mt-2">Adicionar Livros</Button></Link>
+            <Container>
+                <div>
+                    <h1 className="sectionTitle">Adicionar novas campanhas:</h1>
+                    <Link to="/AddLivros"><Button variant="primary" className="btn-addLivro">Adicionar Livros</Button></Link>
                 </div>
-            <hr />
-            <h1 class="display-4">Campanhas Ativas</h1>
-            <Row>
-                {cardsAtivos}
-            </Row>
-            <hr />
-            <h1 class="display-4">Livros Adicionados</h1>
-            <Row>
-                {cardsInativos}
-            </Row>
-        </Container>
+                <br/>
+                <hr />
+                <h1 className="sectionTitle">Campanhas ativas:</h1>
+                    <Row className="row-cards">
+                        {cardsAtivos}
+                    </Row>
+                <hr />
+                <h1 class="sectionTitle">Livros adicionados:</h1>
+                    <Row  className="row-cards">
+                        {cardsInativos}
+                    </Row>
+                <br/>
+                <hr />
+            </Container>
         </>
     )
 }

@@ -71,7 +71,7 @@ export default function CampanhaInativa(props){
 
   return(
   
-    <div className="card-campanha">
+    <div className="card-campanhaIn">
       <div className="img-campanha">
         <img src={require(`./img/${props.capa}`).default} className="livro-campanha" alt="Capa Livro" />
       </div>
@@ -80,9 +80,11 @@ export default function CampanhaInativa(props){
         <p>Exemplares: {props.numeroExemplar}</p>
         <p>Gênero: {props.genero}</p>
         <p>{props.Biblioteca}</p>
-        <Button onClick={() =>setSmShow(true)} variant="success" className="editar">Editar</Button>
-        <Button onClick={Update} variant="primary" className="remover">Iniciar Campanha</Button>
-        <Button onClick={Delete} variant="danger" className="remover">Remover</Button>
+        <div className="btn-campanha">
+          <Button onClick={() =>setSmShow(true)} variant="success" className="editar">Editar</Button>
+          <Button onClick={Delete} variant="danger" className="remover">Remover</Button>
+        </div>
+        <Button onClick={Update} variant="info" className="iniciar-campanha">Iniciar Campanha</Button>
       </div>
 
       {/* React-Bootstrap */}

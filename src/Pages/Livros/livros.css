@@ -1,0 +1,14 @@
+.btn-addLivro {
+    margin-top: 10px;
+}
+
+.sectionTitle {
+    margin-top: 30px;
+    font-size: 28px;
+}
+
+.row-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}

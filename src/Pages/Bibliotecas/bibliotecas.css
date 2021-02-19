@@ -6,4 +6,20 @@
     
 }
 
+.inputPesquisa{
+    padding-top: 60px;
+    padding-right: 100px;
+    padding-left: 100px;
+    padding-bottom: 40px;
+}
+
+@media(max-width: 768px) {
+
+    .inputPesquisa{
+        padding-top: 30px;
+        padding-right: 50px;
+        padding-left: 50px;
+        padding-bottom: 20px;
+    }
+}
 

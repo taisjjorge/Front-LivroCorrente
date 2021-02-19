@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Container, Row } from 'react-bootstrap';
+import { Container, Row, InputGroup, FormControl,  Button } from 'react-bootstrap';
 import HeaderPagina from '../../Components/HeaderPagina';
 import Biblioteca from '../../Components/Biblioteca/Biblioteca';
 
@@ -48,9 +48,16 @@ export default function Bibliotecas() {
         <HeaderPagina titleCategoria='Bibliotecas cadastradas' />
         
         <Container fluid className="div-main-bibliotecas">
-          <input class="float-right mt-3" placeholder="" onChange={event => setBusca(event.target.value)}/>
+
+          <InputGroup className="inputPesquisa">
+            <FormControl placeholder="Digite o nome da biblioteca" onChange={event => setBusca(event.target.value)}/>
+            <InputGroup.Append>
+              <Button variant="outline-info">Buscar</Button>
+            </InputGroup.Append>
+          </InputGroup>
+
           <Container>
-          {/* Utilizando função map para puxar os dados do array bibliotecas a partir das props passadas no componente Biblioteca */}
+  
           <Row>
           {bibliotecas}
           </Row>

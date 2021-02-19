@@ -6,9 +6,10 @@
  
 
 
-.card-campanha {
+.card-campanhaIn {
     display: flex;
-    width: 45%;
+    width: 400px;
+    align-items: center;
     background-color: rgb(255, 255, 255);
     transition: .3s;
     box-shadow: 2px 2px 2px #CCC;
@@ -30,6 +31,10 @@
 .livro-campanha {
     width: 130px;
     height: 170px;
+}
+
+.iniciar-campanha{
+    width: 164.73px;
 }
 
 

@@ -8,7 +8,7 @@ export default function Login() {
     const [email, setEmail] = useState("")
     const [senha, setSenha] = useState("")
 
-
+    const [resp, setResp] = useState("")
 
     async function ValidandoLogin(event){
         event.preventDefault()
@@ -21,22 +21,24 @@ export default function Login() {
                 "senha": senha
             }})})
     
-        const data = await answer.json()
-        if (data.Mensagem == "Email incorreto"){
-            alert("Email incorreto")
-        } else if (data.Mensagem == "Senha incorreta") {
-            alert("Senha incorreta")
-        } else if (data.Mensagem == "Em Analise") {
-            alert("Seu cadastro está em analise")
-        } else if (data.Mensagem == "Recusado") {
-            alert("Recusado")
-        } else if (data.Mensagem == "Aceito") {
+        var data = await answer.json()
+        if(data.token){
             localStorage.setItem("token", data.token)
-            return(<Redirect to='/' />)
-        } else {
-            alert("Erro no cadastro")
         }
-    } 
+        setResp(data.Mensagem)
+    }
+    
+    if (resp == "Email incorreto"){
+        alert("Email incorreto")
+    } else if (resp == "Senha incorreta") {
+        alert("Senha incorreta")
+    } else if (resp == "Em Analise") {
+        alert("Seu cadastro está em analise")
+    } else if (resp == "Recusado") {
+        alert("Recusado")
+    } else if (resp == "Aceito") {
+        return(<Redirect to='/Livros' />)
+    }
 
     return(
         <>

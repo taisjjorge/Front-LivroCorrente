@@ -5,7 +5,7 @@ import { Modal, Button, Form} from 'react-bootstrap';
 import './campanhaBiblioteca.css';
 
 
-export default function CampanhaBiblioteca(props){
+export default function CampanhaInativa(props){
 
   const [titulo, setTitulo] = useState(props.titulo)
   const [numeroExemplar, setNumeroExemplar] = useState(props.numeroExemplar)
@@ -13,7 +13,6 @@ export default function CampanhaBiblioteca(props){
 
   const [smShow, setSmShow] = useState(false);
   const [resp, setResp] = useState('')
-  
 
   async function Edicao(e){
     e.preventDefault()
@@ -60,14 +59,14 @@ export default function CampanhaBiblioteca(props){
     setResp(data.Mensagem)
   }
 
+
   if(resp === "Foi"){
-    return(<Redirect to="/Livros" />)
+    return(<Redirect to="/Campanhas" />)
   } else if (resp === "Deletou"){
     return(<Redirect to="Livros" />)
   } else if(resp === "Token Invalido"){
     return(<Redirect to="/Login-Biblioteca" />)
   }
-  
   
 
   return(
@@ -82,7 +81,7 @@ export default function CampanhaBiblioteca(props){
         <p>Gênero: {props.genero}</p>
         <p>{props.Biblioteca}</p>
         <Button onClick={() =>setSmShow(true)} variant="success" className="editar">Editar</Button>
-        <Button onClick={Update} variant="warning" className="remover">Parar Campanha</Button>
+        <Button onClick={Update} variant="primary" className="remover">Iniciar Campanha</Button>
         <Button onClick={Delete} variant="danger" className="remover">Remover</Button>
       </div>
 
@@ -108,7 +107,7 @@ export default function CampanhaBiblioteca(props){
 
             <Form.Group>
               <Form.Label>Nº exemplares:</Form.Label>
-              <Form.Control as="select" name="numeroExemplar" onChange={e => setNumeroExemplar(e.target.value)}>
+              <Form.Control as="select" name="numeroExemplar" text="Teste" onChange={e => setNumeroExemplar(e.target.value)}>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>

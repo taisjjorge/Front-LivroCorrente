@@ -48,7 +48,7 @@ export default function Bibliotecas() {
         <HeaderPagina titleCategoria='Bibliotecas cadastradas' />
         
         <Container fluid className="div-main-bibliotecas">
-          <input onChange={event => setBusca(event.target.value)}/>
+          <input class="float-right mt-3" placeholder="" onChange={event => setBusca(event.target.value)}/>
           <Container>
           {/* Utilizando função map para puxar os dados do array bibliotecas a partir das props passadas no componente Biblioteca */}
           <Row>

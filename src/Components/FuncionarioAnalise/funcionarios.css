@@ -1,0 +1,28 @@
+.div-funcionario {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+ 
+
+
+.card-funcionario {
+    display: flex;
+    width: 45%;
+    background-color: rgb(255, 255, 255);
+    transition: .3s;
+    box-shadow: 2px 2px 2px #CCC;
+    padding: 20px;
+    margin: 20px;
+   
+    
+}
+
+.card-funcionario:hover {
+    box-shadow: 4px 4px 4px #CCC;
+
+}
+
+.Aceitar {
+    margin-right: 10px;
+}

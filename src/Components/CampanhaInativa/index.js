@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Redirect } from 'react-router-dom'
-import { useState } from 'react';
 import { Modal, Button, Form} from 'react-bootstrap';
 import './campanhaBiblioteca.css';
 
@@ -13,6 +12,14 @@ export default function CampanhaInativa(props){
 
   const [smShow, setSmShow] = useState(false);
   const [resp, setResp] = useState('')
+
+  useEffect(() => {
+    if(document.querySelector("[name='titulo']") != null){
+      document.querySelector("[name='titulo']").value = props.titulo
+      document.querySelector("[name='numeroExemplar']").value = props.numeroExemplar
+      document.querySelector("[name='genero']").value = props.genero
+    }
+  }, [smShow])
 
   async function Edicao(e){
     e.preventDefault()
@@ -60,18 +67,14 @@ export default function CampanhaInativa(props){
   }
 
 
-  if(resp === "Foi"){
-    return(<Redirect to="/Campanhas" />)
-  } else if (resp === "Deletou"){
-    return(<Redirect to="Livros" />)
-  } else if(resp === "Token Invalido"){
+  if(resp === "Token Invalido"){
     return(<Redirect to="/Login-Biblioteca" />)
   }
   
 
   return(
   
-    <div className="card-campanha">
+    <div className="card-campanhaIn">
       <div className="img-campanha">
         <img src={require(`./img/${props.capa}`).default} className="livro-campanha" alt="Capa Livro" />
       </div>
@@ -80,9 +83,13 @@ export default function CampanhaInativa(props){
         <p>Exemplares: {props.numeroExemplar}</p>
         <p>Gênero: {props.genero}</p>
         <p>{props.Biblioteca}</p>
-        <Button onClick={() =>setSmShow(true)} variant="success" className="editar">Editar</Button>
-        <Button onClick={Update} variant="primary" className="remover">Iniciar Campanha</Button>
-        <Button onClick={Delete} variant="danger" className="remover">Remover</Button>
+        <div className="btn-campanha">
+          <div>
+            <Button onClick={() =>setSmShow(true)} variant="success" className="editar">Editar</Button>
+            <Button onClick={Delete} variant="danger" className="remover">Remover</Button>
+          </div>
+          <Button onClick={Update} variant="info" className="iniciar-campanha">Iniciar Campanha</Button>
+        </div>
       </div>
 
       {/* React-Bootstrap */}
@@ -119,7 +126,7 @@ export default function CampanhaInativa(props){
               <Form.Control type="text" name="genero" onChange={e => setGenero(e.target.value)}/>
             </Form.Group>
 
-            <Button variant="outline-primary" type="submit">Enviar</Button>
+            <Button variant="outline-primary" type="submit" onClick={()=>setSmShow(false)}>Enviar</Button>
 
           </Form>
         </Modal.Body>

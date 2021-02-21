@@ -1,4 +1,3 @@
-// import { CadastroVoluntario } from '../../Components/Forms/CadastroVoluntario'
 import FormularioCadastro from '../../Components/Forms/CadastroVoluntario/FormularioCadastro'
 import { Container } from '@material-ui/core';
 import { Tabs, Tab } from 'react-bootstrap';
@@ -33,4 +32,4 @@ export default function ValidaVoluntario() {
 }
 export function aoEnviarForm(dados){
     console.log(dados);
-}   //printa no console os dados do FormCad
+}   

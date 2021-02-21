@@ -3,9 +3,7 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import HeaderCampanha from '../../Components/HeaderCampanha';
 import './campanhas.css';
-import CampanhaBiblioteca from '../../Components/CampanhaBiblioteca';
-import { useSelector } from 'react-redux'
-
+import Campanha from '../../Components/Campanha';
 
 export default function Campanhas () {
 
@@ -40,10 +38,10 @@ export default function Campanhas () {
     },[])
 
     if (livros.length==0){
-        cards = <h1>Essa Biblioteca não realizou pedidos em nosso site :C </h1>
+        cards = <h1>No momento esta biblioteca não possui campanhas abertas!</h1>
     } else {
     var cards = livros.map((item) => 
-    <CampanhaBiblioteca 
+    <Campanha
         id={item.id_pedido}
         capa={item.capa_pedido}
         titulo={item.titulo_pedido}

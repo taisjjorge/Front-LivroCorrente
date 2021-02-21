@@ -6,9 +6,10 @@
  
 
 
-.card-campanha {
+.card-campanhaBib {
     display: flex;
-    width: 45%;
+    width: 400px;
+    align-items: center;
     background-color: rgb(255, 255, 255);
     transition: .3s;
     box-shadow: 2px 2px 2px #CCC;
@@ -25,12 +26,28 @@
 
 .img-campanha {
     margin-right: 50px;
+
 }
 
-.livro-campanha {
+.livro-campanhaBib {
     width: 130px;
     height: 170px;
 }
+.btn-campanha {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+.remover {
+    margin-bottom: 5px;
+}
+
+.parar-campanha{
+    width: 164.73px;
+}
+
 
 
 
@@ -47,7 +64,3 @@
     }
 }
  
-.editar {
-    margin-right: 10px;
-    margin-bottom: 5px;
-}

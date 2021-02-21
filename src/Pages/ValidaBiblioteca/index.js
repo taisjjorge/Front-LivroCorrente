@@ -1,16 +1,17 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
 import FormularioCadastro  from '../../Components/Forms/CadastroBiblioteca/FormularioCadastro'
 import  Login  from '../../Components/Forms/Login'
 import { Container } from '@material-ui/core';
 import { Tabs, Tab } from 'react-bootstrap';
+
+import './validaBiblioteca.css'
 
 import { validarCpf, validarNome, validarSenha, validarCelular, validarQtde} from '../../Components/Forms/models/cadastro'
 
 export default function ValidaBiblioteca() {
   
     return(
-        <Container 
+        <Container className="container-form"
             component="aticle"
             maxWidth="sm" >
 
@@ -37,12 +38,5 @@ export async function aoEnviarForm(dados){
         body: JSON.stringify({dados})})
 
     const data = await answer.json()
-    if (data.Mensagem == "Seu cadastro está em analise"){
-        alert("Obtigado pelo cadastro, ele esta em analise agora")
-    } else if (data.Mensagem == "Email já cadastrado") {
-        alert("Email já cadastrado")
-    } else {
-        alert("Erro no cadastro")
-    }
 } 
   

@@ -1,30 +1,31 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Redirect, Link } from 'react-router-dom'
 import CampanhaBiblioteca from '../../Components/CampanhaBiblioteca'
 import CampanhaInativa from '../../Components/CampanhaInativa'
 import HeaderPagina from '../../Components/HeaderPagina'
 import { Container, Row, Button } from 'react-bootstrap'
 
-function Livros() {
+import './cadastroCampanhas.css';
+
+function CadastroCampanhas() {
 
     const [livros, setLivros] = useState([])
 
-    useState( async () => {
+    useEffect( async () => {
         const answer = await fetch("http://localhost:3001/livros",{
             method: "POST",
             headers:{"Content-Type":"application/json",
             "Authorization": "Bearer "+ localStorage.getItem("token")
             }
         })
-    
+
     const data = await answer.json()
     if (data.Mensagem == "Token Invalido"){
         return(<Redirect to="/Login-Biblioteca"/>)
     }
-
     setLivros(data)
-    
-    },[])
+        
+    }, [livros])
 
     const cardsAtivos = livros.map((item) => {
         if(item.valido_pedido.data == 1 ){
@@ -60,23 +61,27 @@ function Livros() {
 
     return(
         <>
-        <HeaderPagina titleCategoria='Livros' />
-        <Container>
-            <div>
-                <Link to="/AddLivros"><Button class="btn btn-secondary mt-2">Adicionar Livros</Button></Link>
+        <HeaderPagina titleCategoria='Cadastrar campanha' />
+            <Container>
+                <div>
+                    <h1 className="sectionTitle">Adicionar novas campanhas:</h1>
+                    <Link to="/AddLivros"><Button variant="primary" className="btn-addLivro">Adicionar Livros</Button></Link>
                 </div>
-            <hr />
-            <h1 class="display-4">Campanhas Ativas</h1>
-            <Row>
-                {cardsAtivos}
-            </Row>
-            <hr />
-            <h1 class="display-4">Livros Adicionados</h1>
-            <Row>
-                {cardsInativos}
-            </Row>
-        </Container>
+                <br/>
+                <hr />
+                <h1 className="sectionTitle">Campanhas ativas:</h1>
+                    <Row className="row-cards">
+                        {cardsAtivos}
+                    </Row>
+                <hr />
+                <h1 class="sectionTitle">Livros adicionados:</h1>
+                    <Row  className="row-cards">
+                        {cardsInativos}
+                    </Row>
+                <br/>
+                <hr />
+            </Container>
         </>
     )
 }
-export default Livros
+export default CadastroCampanhas

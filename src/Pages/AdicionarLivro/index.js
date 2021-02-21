@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Container } from 'react-bootstrap';
+
+import './adicionarLivro.css';
+
 
 export default function AdicionaLivro() {
     const [titulo, setTitulo] = useState('')
@@ -30,26 +33,22 @@ export default function AdicionaLivro() {
     }
 
     if(resp == "Livro cadastrado"){
-        return(<Redirect to="/Livros" />)
+        return(<Redirect to="/CadastroCampanhas" />)
     } else if(resp == "Token Invalido"){
         return(<Redirect to="/Login-Biblioteca" />) 
     }
 
 
     return(
-      <div class="container">
-        <h1 class="display-4">Adicionar um livro</h1>
+      <Container>
+
+        <h1 class="display-4 mt-4 mb-4 titleForm">Adicionar um livro</h1>
         <Form onSubmit={Adicao}>
             <Form.Group>
               <Form.Label>Título:</Form.Label>
               <Form.Control type="text" name="titulo" onChange={e => setTitulo(e.target.value)} />
             </Form.Group>
-
-            <Form.Group>
-              <Form.Label>Autor:</Form.Label>
-              <Form.Control type="text" name="autor" onChange={e => setAutor(e.target.value)} />
-            </Form.Group>
-
+            
             <Form.Group>
               <Form.Label>Gênero:</Form.Label>
               <Form.Control type="text" name="genero" onChange={e => setGenero(e.target.value)}/>
@@ -64,9 +63,13 @@ export default function AdicionaLivro() {
               </Form.Control>
             </Form.Group>
 
-            <Button variant="outline-primary" type="submit">Adicionar</Button>
+            <Form.Group>
+              <Form.File id="capa_pedido" label="Capa Livro:" />
+            </Form.Group>
+
+            <Button className="btn-adicionar" variant="outline-primary" type="submit">Adicionar</Button>
 
           </Form>
-      </div>
+      </Container>
     )
 }

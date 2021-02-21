@@ -30,15 +30,28 @@ export default function Login() {
     
     if (resp == "Email incorreto"){
         alert("Email incorreto")
+        setResp("")
+        return(<Redirect to='/Login-Biblioteca' />)
+
     } else if (resp == "Senha incorreta") {
         alert("Senha incorreta")
+        setResp("")
+        return(<Redirect to='/Login-Biblioteca' />)
+
     } else if (resp == "Em Analise") {
         alert("Seu cadastro está em analise")
+        setResp("")
+        return(<Redirect to='/Login-Biblioteca' />)
+
     } else if (resp == "Recusado") {
         alert("Recusado")
+        setResp("")
+        return(<Redirect to='/Login-Biblioteca' />)
+
     } else if (resp == "Aceito") {
-        return(<Redirect to='/Livros' />)
+        return(<Redirect to='/CadastroCampanhas' />)
     }
+    
 
     return(
         <>

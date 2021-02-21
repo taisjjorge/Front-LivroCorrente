@@ -1,0 +1,13 @@
+.pagina-construcao{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-construcao{
+    width: 500px;
+    height: 500px;
+}
+

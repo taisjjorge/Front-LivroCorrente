@@ -1,6 +1,6 @@
 .titulo-bg {
     height: auto;
-    background-color: #987284; 
+    background-image: linear-gradient( #af6688, #987284 );
     opacity: .8;
     display: flex;
     justify-content: flex-end;

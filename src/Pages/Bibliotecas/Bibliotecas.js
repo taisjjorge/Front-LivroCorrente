@@ -4,8 +4,6 @@ import { Container, Row, InputGroup, FormControl,  Button } from 'react-bootstra
 import HeaderPagina from '../../Components/HeaderPagina';
 import Biblioteca from '../../Components/Biblioteca/Biblioteca';
 
-
-
 import './bibliotecas.css';
 
 export default function Bibliotecas() {
@@ -14,7 +12,7 @@ export default function Bibliotecas() {
   const [busca, setBusca] = useState('')
 
   React.useState(async () => {
-      const answer = await fetch("https://back-livro-corrente.herokuapp.com/bibliotecas")
+      const answer = await fetch("http://localhost:3001/bibliotecas")
       const data = await answer.json()
       setBiblioteca(data);
 

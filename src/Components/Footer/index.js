@@ -11,9 +11,9 @@ export default function Footer (){
                 <div className="container-info">
                     <div className="info-inicio">
                         <h6 className="title">Início</h6> {/*Uppercase via css*/}
-                        <a className="item-footer" href="#">Quem Somos</a>
-                        <a className="item-footer" href="#">Pontos de Coleta</a>
-                        <a className="item-footer" href="#">Bibliotecas</a>
+                        <a className="item-footer" href="/QuemSomos">Quem Somos</a>
+                        <a className="item-footer" href="/PontosColeta">Pontos de Coleta</a>
+                        <a className="item-footer" href="/Bibliotecas">Bibliotecas</a>
                     </div>
 
                     <div className="suporte">

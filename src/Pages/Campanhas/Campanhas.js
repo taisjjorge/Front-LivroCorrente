@@ -3,9 +3,7 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import HeaderCampanha from '../../Components/HeaderCampanha';
 import './campanhas.css';
-import CampanhaBiblioteca from '../../Components/CampanhaBiblioteca';
-import { useSelector } from 'react-redux'
-
+import Campanha from '../../Components/Campanha';
 
 export default function Campanhas () {
 
@@ -15,7 +13,7 @@ export default function Campanhas () {
     const [livros, setLivros] = useState([]);
 
     useState( async () => {
-        const envio = await fetch("https://back-livro-corrente.herokuapp.com/biblioteca",{
+        const envio = await fetch("http://localhost:3001/biblioteca",{
             method: "POST",
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify({"id":NumB})
@@ -28,7 +26,7 @@ export default function Campanhas () {
 
 
     useState( async () => {
-    const answer = await fetch("https://back-livro-corrente.herokuapp.com/inativos",{
+    const answer = await fetch("http://localhost:3001/inativos",{
         method: "POST",
         headers:{"Content-Type":"application/json"},
         body: JSON.stringify({"id":NumB})
@@ -40,10 +38,10 @@ export default function Campanhas () {
     },[])
 
     if (livros.length==0){
-        cards = <h1>Essa Biblioteca não realizou pedidos em nosso site :C </h1>
+        cards = <h1>No momento esta biblioteca não possui campanhas abertas!</h1>
     } else {
     var cards = livros.map((item) => 
-    <CampanhaBiblioteca 
+    <Campanha
         id={item.id_pedido}
         capa={item.capa_pedido}
         titulo={item.titulo_pedido}

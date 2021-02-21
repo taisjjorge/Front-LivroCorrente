@@ -14,7 +14,7 @@ function Home() {
     const [produtos, setProdutos] = useState([]);
 
     useState(async () => {
-        const answer = await fetch("https://back-livro-corrente.herokuapp.com/cards")
+        const answer = await fetch("http://localhost:3001/cards")
         const data = await answer.json()
         setProdutos(data);
 
@@ -22,18 +22,18 @@ function Home() {
 
     const cards = produtos.map(item => <Campanha capa={item.capa_pedido}
         titulo={item.titulo_pedido}
-       numeroExemplar={item.numeroExemplar_pedido}
-       genero={item.genero_pedido}
-       Biblioteca={item.nome_biblioteca} />)
+        numeroExemplar={item.numeroExemplar_pedido}
+        genero={item.genero_pedido}
+        Biblioteca={item.nome_biblioteca} />)
 
     return (
         <React.StrictMode>
             <Banner /> 
             <div className ="cards"> 
                 <Link to="/Bibliotecas/Bibliotecas"><BtnCard title='Bibliotecas'/></Link>
-                <Link to="/Voluntarios/Voluntarios"><BtnCard title='Voluntários'/></Link>
-                <Link to="/Parceiros/Parceiros"><BtnCard title='Parceiros'/></Link>
-                {/* <a href="#parceiros"><BtnCard title='Parceiros'/></a> */}
+                <Link to="/Voluntarios"><BtnCard title='Voluntários'/></Link>
+                <Link to="/Parceiros"><BtnCard title='Parceiros'/></Link>
+                
             </div>
             <div className="div-main">
                 <Container >

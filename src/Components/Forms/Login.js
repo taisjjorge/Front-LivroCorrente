@@ -13,7 +13,7 @@ export default function Login() {
     async function ValidandoLogin(event){
         event.preventDefault()
 
-        const answer = await fetch("https://back-livro-corrente.herokuapp.com/login/funcionario",{
+        const answer = await fetch("http://localhost:3001/login/funcionario",{
             method: "POST",
             headers:{"Content-Type":"application/json"},
             body: JSON.stringify({"dados":{
@@ -30,15 +30,28 @@ export default function Login() {
     
     if (resp == "Email incorreto"){
         alert("Email incorreto")
+        setResp("")
+        return(<Redirect to='/Login-Biblioteca' />)
+
     } else if (resp == "Senha incorreta") {
         alert("Senha incorreta")
+        setResp("")
+        return(<Redirect to='/Login-Biblioteca' />)
+
     } else if (resp == "Em Analise") {
         alert("Seu cadastro está em analise")
+        setResp("")
+        return(<Redirect to='/Login-Biblioteca' />)
+
     } else if (resp == "Recusado") {
         alert("Recusado")
+        setResp("")
+        return(<Redirect to='/Login-Biblioteca' />)
+
     } else if (resp == "Aceito") {
-        return(<Redirect to='/Livros' />)
+        return(<Redirect to='/CadastroCampanhas' />)
     }
+    
 
     return(
         <>

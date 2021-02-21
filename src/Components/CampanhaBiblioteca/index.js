@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { Redirect } from 'react-router-dom'
 import { useState } from 'react';
 import { Modal, Button, Form} from 'react-bootstrap';
@@ -13,11 +13,19 @@ export default function CampanhaBiblioteca(props){
 
   const [smShow, setSmShow] = useState(false);
   const [resp, setResp] = useState('')
+
+  useEffect(() => {
+    if(document.querySelector("[name='titulo']") != null){
+      document.querySelector("[name='titulo']").value = props.titulo
+      document.querySelector("[name='numeroExemplar']").value = props.numeroExemplar
+      document.querySelector("[name='genero']").value = props.genero
+    }
+  }, [smShow])
   
 
   async function Edicao(e){
     e.preventDefault()
-    const answer = await fetch("https://back-livro-corrente.herokuapp.com/atualizar/card",{
+    const answer = await fetch("http://localhost:3001/atualizar/card",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
@@ -35,7 +43,7 @@ export default function CampanhaBiblioteca(props){
   }
 
   async function Update(){
-    const answer = await fetch("https://back-livro-corrente.herokuapp.com/remover/card",{
+    const answer = await fetch("http://localhost:3001/remover/card",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
@@ -48,7 +56,7 @@ export default function CampanhaBiblioteca(props){
   }
 
   async function Delete(){
-    const answer = await fetch("https://back-livro-corrente.herokuapp.com/deletar",{
+    const answer = await fetch("http://localhost:3001/deletar",{
         method: "POST",
         headers:{
           "Content-Type": "application/json",
@@ -60,11 +68,7 @@ export default function CampanhaBiblioteca(props){
     setResp(data.Mensagem)
   }
 
-  if(resp === "Foi"){
-    return(<Redirect to="/Livros" />)
-  } else if (resp === "Deletou"){
-    return(<Redirect to="Livros" />)
-  } else if(resp === "Token Invalido"){
+  if (resp === "Token Invalido"){
     return(<Redirect to="/Login-Biblioteca" />)
   }
   
@@ -82,10 +86,12 @@ export default function CampanhaBiblioteca(props){
         <p>Gênero: {props.genero}</p>
         <p>{props.Biblioteca}</p>
         <div className="btn-campanha">
-          <Button onClick={() =>setSmShow(true)} variant="success" className="editar">Editar</Button>
-          <Button onClick={Delete} variant="danger" className="remover">Remover</Button>
+          <div>
+            <Button onClick={() =>setSmShow(true)} variant="success" className="editar">Editar</Button>
+            <Button onClick={Delete} variant="danger" className="remover">Remover</Button>
+          </div>
+          <Button onClick={Update} variant="secondary" className="parar-campanha">Parar Campanha</Button>
         </div>
-        <Button onClick={Update} variant="secondary" className="parar-campanha">Parar Campanha</Button>
         
       </div>
 
@@ -123,7 +129,7 @@ export default function CampanhaBiblioteca(props){
               <Form.Control type="text" name="genero" onChange={e => setGenero(e.target.value)}/>
             </Form.Group>
 
-            <Button variant="outline-primary" type="submit">Enviar</Button>
+            <Button variant="outline-primary" type="submit" onClick={()=>setSmShow(false)}>Enviar</Button>
 
           </Form>
         </Modal.Body>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Redirect } from 'react-router-dom'
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, Container } from 'react-bootstrap';
 
 import './adicionarLivro.css';
 
@@ -15,7 +15,7 @@ export default function AdicionaLivro() {
 
     async function Adicao(e){
         e.preventDefault()
-        const answer = await fetch("https://back-livro-corrente.herokuapp.com/adiciona/livros",{
+        const answer = await fetch("http://localhost:3001/adiciona/livros",{
             method: "POST",
             headers:{
               "Content-Type": "application/json",
@@ -33,16 +33,16 @@ export default function AdicionaLivro() {
     }
 
     if(resp == "Livro cadastrado"){
-        return(<Redirect to="/Livros" />)
+        return(<Redirect to="/CadastroCampanhas" />)
     } else if(resp == "Token Invalido"){
         return(<Redirect to="/Login-Biblioteca" />) 
     }
 
 
     return(
-      <div class="container-Addlivro">
+      <Container>
 
-        <h1 class="display-4 mb-4">Adicionar um livro</h1>
+        <h1 class="display-4 mt-4 mb-4 titleForm">Adicionar um livro</h1>
         <Form onSubmit={Adicao}>
             <Form.Group>
               <Form.Label>Título:</Form.Label>
@@ -63,16 +63,13 @@ export default function AdicionaLivro() {
               </Form.Control>
             </Form.Group>
 
-            <Form>
-
             <Form.Group>
               <Form.File id="capa_pedido" label="Capa Livro:" />
             </Form.Group>
-          </Form>
 
             <Button className="btn-adicionar" variant="outline-primary" type="submit">Adicionar</Button>
 
           </Form>
-      </div>
+      </Container>
     )
 }

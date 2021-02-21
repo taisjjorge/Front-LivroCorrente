@@ -22,7 +22,7 @@ export default function Campanha(props){
               <p>Exemplares: {props.numeroExemplar}</p>
               <p>Gênero: {props.genero}</p>
               <p>{props.Biblioteca}</p>
-              <Button onClick={() => setLgShow(true)}>Doar</Button>
+              <Button onClick={() => setLgShow(true)}>Doar livro</Button>
             </div>
 
             {/* React-Bootstrap */}

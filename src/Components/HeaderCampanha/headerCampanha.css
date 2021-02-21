@@ -1,6 +1,6 @@
 .titulo-bg-campanha {
     height: auto;
-    background-color:#27b2c7 ;
+    background-image: linear-gradient(to right, #27B2C7 , #0084D7);
     opacity: .8;
     display: flex;
     justify-content: flex-end;

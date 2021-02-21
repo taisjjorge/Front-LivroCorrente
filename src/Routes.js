@@ -43,7 +43,7 @@ function Routes() {
             {Rmenu}
             <main>
                 <Switch>
-                    <Route exact path="/livro-corrente" component={Home} />
+                    <Route exact path="/" component={Home} />
                     <Route path="/Bibliotecas" component={Bibliotecas} />
                     <Route path="/QuemSomos" component={QuemSomos} />
                     <Route path="/Campanhas" component={Campanhas} />

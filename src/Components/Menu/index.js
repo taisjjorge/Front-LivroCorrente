@@ -10,7 +10,7 @@ function BaseMenu(props) {
 
         <header>
         <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
-            <Navbar.Brand  as={Link} to="/livro-corrente" href="/Home">
+            <Navbar.Brand  as={Link} to="/" href="/Home">
                 <img
                     src="https://i.imgur.com/FtVCm1o.png"
                     alt="Logo"
